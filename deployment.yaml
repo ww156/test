@@ -4,6 +4,7 @@ metadata:
   name: test
   labels:
     app: test
+  Annotations: deployment.kubernetes.io/revision=1
 spec:
   replicas: 2
   selector:
