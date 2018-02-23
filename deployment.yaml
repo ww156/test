@@ -21,12 +21,12 @@ spec:
       containers:
       - name: test
         image: 47.97.90.24:5000/test/test
-        resources:
-          requests:
-            cpu: 100m
-            memory: 50Mi
-          limits:
-            cpu: 100m
-            memory: 50Mi
+        #resources:
+        #  requests:
+        #    cpu: 100m
+        #    memory: 50Mi
+        #  limits:
+        #    cpu: 100m
+        #    memory: 50Mi
         ports:
         - containerPort: 8080
