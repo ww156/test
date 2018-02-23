@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: test
-        image: 47.97.90.24:5000/test/test
+        image: 47.97.90.24:5000/test/test:v$BUILD_NUMBER
         #resources:
         #  requests:
         #    cpu: 100m
