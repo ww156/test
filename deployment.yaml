@@ -9,12 +9,12 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: test
+      app: test-v$BUILD_NUMBER
       task: test
   template:
     metadata:
       labels:
-        app: test
+        app: test-v$BUILD_NUMBER
         task: test
         version: v0.0.1
     spec:
