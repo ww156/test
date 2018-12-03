@@ -2,19 +2,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: test-v$BUILD_NUMBER
+  name: test
   labels:
     app: test
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: test-v$BUILD_NUMBER
+      app: test
       task: test
   template:
     metadata:
       labels:
-        app: test-v$BUILD_NUMBER
+        app: test
         task: test
         version: v0.0.1
     spec:
