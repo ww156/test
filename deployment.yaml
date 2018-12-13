@@ -33,3 +33,32 @@ spec:
           containerPort: 8080
       imagePullSecrets:
         - name: docker-secret
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: test
+spec:
+  selector:
+    app: test
+  ports:
+    - protocol: TCP
+      port: 80
+      name: web
+      
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test
+  annotations:
+    traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /test
+        backend:
+          serviceName: test
+          servicePort: http
