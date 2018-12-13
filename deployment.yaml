@@ -31,4 +31,4 @@ spec:
         ports:
         - containerPort: 8080
       imagePullSecrets:
-        - name: regsecret
+        - name: docker-secret
