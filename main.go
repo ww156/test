@@ -5,9 +5,12 @@ import(
     	"net/http"
     	"html"
 	"os"
+	"os/exec"
 )
 
 func main(){
+	cmd := exec.Command("sh", "-c", "mkdir -p /log/test")
+	cmd.Run()
     	f, err := os.OpenFile("/log/test/log", os.O_APPEND|os.O_CREATE, 0666)
 	if err != nil {
 		fmt.Println(err)
