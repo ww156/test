@@ -11,7 +11,7 @@ import(
 func main(){
 	cmd := exec.Command("sh", "-c", "mkdir -p /log/test")
 	cmd.Run()
-    	f, err := os.OpenFile("/log/test/log", os.O_APPEND|os.O_CREATE, 0666)
+    	f, err := os.OpenFile("/log/test/log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0755)
 	if err != nil {
 		fmt.Println(err)
 	}
