@@ -21,6 +21,9 @@ spec:
       containers:
       - name: test
         image: 172.18.97.218:5000/test/test:v$BUILD_NUMBER
+        volumeMounts:
+            - name: log
+              mountPath: /log
         #resources:
         #  requests:
         #    cpu: 100m
@@ -33,6 +36,12 @@ spec:
           containerPort: 8080
       imagePullSecrets:
         - name: docker-secret
+      volumn:
+        - name: log
+          persistentVolumeClaim:
+            claimName: log
+
+        
 
 ---
 kind: Service
