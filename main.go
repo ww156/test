@@ -16,7 +16,7 @@ func main(){
 		fmt.Println(err)
 	}
 	http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {
-		n, err := f.WriteString(r.URL.Path + "\n")
+		_, err := f.WriteString(r.URL.Path + "\n")
 		if err != nil {
 			fmt.Println(err)
 		}
