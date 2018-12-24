@@ -16,13 +16,11 @@ func main(){
 		fmt.Println(err)
 	}
 	http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {
-		n, err := f.WriteString(r.URL.Path)
+		n, err := f.WriteString(r.URL.Path + "\n")
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Println(n)
 		fmt.Println("Hello", r.URL.Path)
-		f.Close()
 	    	fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
     	})
    	http.ListenAndServe(":8080", nil)
