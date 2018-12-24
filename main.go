@@ -18,6 +18,7 @@ func main(){
 	http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {
 		f.WriteString(r.URL.Path)
 		fmt.Println("Hello", r.URL.Path)
+		f.Close()
 	    	fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
     	})
    	http.ListenAndServe(":8080", nil)
