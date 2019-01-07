@@ -16,7 +16,6 @@ spec:
       labels:
         app: test
         task: test
-        version: v0.0.1
     spec:
       imagePullSecrets:
       - name: docker-secret
@@ -39,6 +38,7 @@ metadata:
 spec:
   selector:
     app: test
+    task: test
   ports:
     - protocol: TCP
       port: 80
